@@ -1,0 +1,35 @@
+.about4--container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+.about4__cards__item__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  height: 350px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin: 10px 5px;
+}
+
+.about4__cards__item__img {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 50px;
+}
+
+.about4--leaderQuote {
+  padding: 5px 30px;
+  white-space: normal;
+}

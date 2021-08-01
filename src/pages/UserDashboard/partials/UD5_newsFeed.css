@@ -1,0 +1,33 @@
+.ud5--container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  background-color: lightgreen;
+}
+.ud5--container > h3 {
+  margin: 20px;
+}
+
+.ud5__cards__item__link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  height: 185px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 10px 0;
+  margin: 25px 5px;
+}
+
+.ud5__cards__item__img {
+  position: relative;
+  width: 230px;
+  height: 100px;
+  object-fit: cover;
+}

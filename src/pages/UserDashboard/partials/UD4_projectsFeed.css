@@ -1,0 +1,26 @@
+.ud4 {
+  margin: 35px 0;
+}
+.ud4--container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+ {
+  /*Horizontal Scroll Styles*/
+}
+
+.project--container {
+  padding: 5px;
+  width: 250px;
+  height: 150px;
+  margin: 0 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  box-shadow: 3px 3px 0px 0.2px lightgray;
+}

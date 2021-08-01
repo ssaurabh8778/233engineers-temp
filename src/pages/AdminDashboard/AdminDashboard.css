@@ -1,0 +1,22 @@
+.ad--totatUsers--paper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.ad--totatUsers--card {
+  height: 100px;
+  width: 150px;
+  margin: 20px;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  background-color: #f8f8f8;
+}

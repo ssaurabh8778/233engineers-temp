@@ -1,0 +1,57 @@
+:root {
+  color: #293845;
+}
+
+.about3--insideContainer1 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  align-items: center;
+  width: 100%;
+  padding: 30px;
+  margin: 5px 5px;
+}
+
+.about3--insideContainer1 > p {
+  padding: 10px 0px;
+}
+
+.about3--insideContainer1--div1 {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 150px;
+}
+
+.about3--insideContainer1--visionCard {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 25px;
+  padding: 5px 10px;
+  height: 110px;
+}
+
+.about3-visionText3 {
+  color: black;
+  font-weight: bold;
+}
+
+.about3-visionImage {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .about3--insideContainer1--visionCard {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    margin: 25px;
+    padding: 5px 10px;
+    height: 130px;
+  }
+}

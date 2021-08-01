@@ -1,0 +1,33 @@
+.projectDetails--container {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 100%;
+}
+
+.projectDetails--infoContainer {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 25px;
+}
+
+.projectDetails--invite {
+  width: 250px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectDetails--cards {
+  width: 375px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

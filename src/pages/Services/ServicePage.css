@@ -1,0 +1,155 @@
+.sectorPage--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectorPage--insideContainer {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #f8f8f8;
+}
+
+.sectorPage--img {
+  width: 100%;
+  max-width: 1280px;
+  height: 350px;
+  max-height: 350px;
+  margin-bottom: -100px;
+}
+
+ {
+  /* Key people style */
+}
+.keyPeople--card--container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keyPeople--card {
+  height: 200px;
+  width: 45%;
+  min-width: 350px;
+  margin: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.keyPeople--card--avatar {
+  min-width: 100px;
+  min-height: 100px;
+}
+
+.keyPeople--card--info {
+  width: 65%;
+  height: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+}
+
+.keyPeople--h1 {
+  color: lightseagreen;
+}
+
+.keyPeople--card:hover {
+  background-color: mintcream;
+}
+
+ {
+  /*Key projects styles*/
+}
+
+.keyProjects--card--container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keyProjects--card {
+  width: 90%;
+  margin: 15px;
+  min-width: 380px;
+}
+
+.keyProjects--card--insideContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.projects--card--img {
+  width: 15%;
+  height: 15%;
+  min-width: 100px;
+  min-height: 100px;
+  margin: 10px;
+  object-fit: cover;
+  align-self: flex-start;
+}
+
+.keyProjects--card--projectContent {
+  width: 65%;
+  height: 150px;
+  text-overflow: ellipsis;
+  text-align: justify;
+  overflow-y: hidden;
+  flex-wrap: wrap;
+}
+
+ {
+  /*overview styles*/
+}
+
+.overview--card--container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.overview--card {
+  width: 90%;
+  margin: 15px;
+  min-width: 380px;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+}
+
+.overview--card--insideContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+.overview--card--img {
+  width: 30%;
+  min-width: 350px;
+  object-fit: cover;
+  align-self: flex-start;
+  font-size: 1.2rem;
+}
+
+.overview--card--projectContent {
+  width: 60%;
+  min-width: 350px;
+  font-size: 50px;
+  text-overflow: ellipsis;
+  text-align: justify;
+  overflow-y: hidden;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 960px) {
+  .overview--card {
+    width: 100%;
+    margin: 5px;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,11 @@
+.ud1--paper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 25px;
+}
+
+.ud1--button {
+  margin: 10px;
+}

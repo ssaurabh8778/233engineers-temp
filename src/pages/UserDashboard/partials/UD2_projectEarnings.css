@@ -1,0 +1,18 @@
+.ud2--paper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+.ud2--earningsCard {
+  width: 200px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgoldenrodyellow;
+  box-shadow: 3px 3px 0px 0.2px lightgray;
+  margin: 25px;
+  border-radius: 25px;
+}
