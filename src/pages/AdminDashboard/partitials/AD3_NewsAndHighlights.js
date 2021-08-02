@@ -1,48 +1,40 @@
 import React, { useState, useEffect } from "react";
 import {
   Button,
-  TextField,
-  Dialog,
-  AppBar,
-  Toolbar,
   Accordion,
   AccordionSummary,
   AccordionDetails,
   Typography,
 } from "@material-ui/core/";
-import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import IconButton from "@material-ui/core/IconButton";
-import CloseIcon from "@material-ui/icons/Close";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 import firebase from "../../../firebase";
-import dateFormat from "dateformat";
 import OBJECT_POPUP from "./OBJECT_POPUP";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    appBar: {
-      position: "relative",
-    },
-    title: {
-      marginLeft: theme.spacing(2),
-      flex: 1,
-    },
-  })
-);
+// const useStyles = makeStyles((theme: Theme) =>
+//   createStyles({
+//     appBar: {
+//       position: "relative",
+//     },
+//     title: {
+//       marginLeft: theme.spacing(2),
+//       flex: 1,
+//     },
+//   })
+// );
 
 //News & Heighlights section of admin dashboard
-export default () => {
-  const classes = useStyles();
+const AD3_NewsAndHighlights = () => {
+ 
   const [open, setOpen] = React.useState(false);
   const [reload, setReload] = useState(false);
-  const [author, setAuthor] = useState("");
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
+  // const author="";
+  // const title="";
+  // const content="";
+  // const [imgUrl, setImgUrl] = useState("");
   const [rowData, setRowData] = useState("");
   const [objectDetails, setObjectDetails] = useState({});
   const [isNewObject, setIsNewObject] = useState(true);
@@ -51,32 +43,32 @@ export default () => {
     setOpen(true);
   };
 
-  const saveDetails = (e) => {
-    var dateNow = new Date();
-    firebase
-      .database()
-      .ref("newsAndHighlights/" + Date.now())
-      .set(
-        {
-          id: dateNow,
-          publishedOn: dateFormat(dateNow),
-          author,
-          title,
-          content,
-          imgUrl,
-        },
-        (error) => {
-          if (error) {
-            alert("Error Occured");
-            setOpen(false);
-            setReload(!reload);
-          } else {
-            alert("Saved");
-            setOpen(false);
-          }
-        }
-      );
-  };
+  // const saveDetails = (e) => {
+  //   var dateNow = new Date();
+  //   firebase
+  //     .database()
+  //     .ref("newsAndHighlights/" + Date.now())
+  //     .set(
+  //       {
+  //         id: dateNow,
+  //         publishedOn: dateFormat(dateNow),
+  //         author,
+  //         title,
+  //         content,
+  //         imgUrl,
+  //       },
+  //       (error) => {
+  //         if (error) {
+  //           alert("Error Occured");
+  //           setOpen(false);
+  //           setReload(!reload);
+  //         } else {
+  //           alert("Saved");
+  //           setOpen(false);
+  //         }
+  //       }
+  //     );
+  // };
 
   useEffect(() => {
     firebase
@@ -140,27 +132,27 @@ export default () => {
 
   */
 
-  const uploadImage = (file) => {
-    let imageId = Date.now();
-    firebase
-      .storage()
-      .ref("newsAndHighlightsImages/" + imageId)
-      .put(file)
-      .then((snapshot) => {
-        alert("Profile pic updated");
-        firebase
-          .storage()
-          .ref("newsAndHighlightsImages/" + imageId)
-          .getDownloadURL()
-          .then((url) => {
-            console.log(url);
-            setImgUrl(url);
-          })
-          .catch((error) => {
-            alert("error");
-          });
-      });
-  };
+  // const uploadImage = (file) => {
+  //   let imageId = Date.now();
+  //   firebase
+  //     .storage()
+  //     .ref("newsAndHighlightsImages/" + imageId)
+  //     .put(file)
+  //     .then((snapshot) => {
+  //       alert("Profile pic updated");
+  //       firebase
+  //         .storage()
+  //         .ref("newsAndHighlightsImages/" + imageId)
+  //         .getDownloadURL()
+  //         .then((url) => {
+  //           console.log(url);
+  //           setImgUrl(url);
+  //         })
+  //         .catch((error) => {
+  //           alert("error");
+  //         });
+  //     });
+  // };
   return (
     <>
       <Accordion>
@@ -224,3 +216,4 @@ export default () => {
     </>
   );
 };
+export default AD3_NewsAndHighlights;

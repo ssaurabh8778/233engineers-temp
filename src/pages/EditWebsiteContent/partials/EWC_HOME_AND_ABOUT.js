@@ -4,7 +4,6 @@ import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import {
   Button,
   TextField,
-  Grid,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -40,7 +39,7 @@ if (!firebase.apps.length) {
   firebase.app();
 }
 
-export default () => {
+const EWC_HOME_AND_ABOUT =() => {
   const [home1_aboutUs_card1, set_home1_aboutUs_card1] = useState("");
   const [home1_aboutUs_card2, set_home1_aboutUs_card2] = useState("");
   const [home2_whyChooseUs_card1, set_home2_whyChooseUs_card1] = useState("");
@@ -141,7 +140,7 @@ export default () => {
   const updateHomeData = () => {
     firebase
       .database()
-      .ref("websiteContent/" + "home")
+      .ref("websiteContent/home")
       .set({
         home1_aboutUs_card1: home1_aboutUs_card1,
         home1_aboutUs_card2: home1_aboutUs_card2,
@@ -154,7 +153,7 @@ export default () => {
   const updateAboutUsData = () => {
     firebase
       .database()
-      .ref("websiteContent/" + "aboutUs")
+      .ref("websiteContent/aboutUs")
       .set({
         about1_whoWeAre_card1: about1_whoWeAre_card1,
         about1_whoWeAre_card2: about1_whoWeAre_card2,
@@ -172,7 +171,7 @@ export default () => {
   useEffect(() => {
     firebase
       .database()
-      .ref("websiteContent/" + "home")
+      .ref("websiteContent/home")
       .get()
       .then((snapshot) => {
         home.map((item) =>
@@ -181,7 +180,7 @@ export default () => {
       });
     firebase
       .database()
-      .ref("websiteContent/" + "aboutUs")
+      .ref("websiteContent/aboutUs")
       .get()
       .then((snapshot) => {
         aboutUs.map((item) =>
@@ -287,3 +286,4 @@ export default () => {
     </div>
   );
 };
+export default EWC_HOME_AND_ABOUT;

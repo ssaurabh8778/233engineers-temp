@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Button } from "@material-ui/core";
 
-export default ({ imageLinks }) => {
+const Home1_carousal = ({ imageLinks }) => {
   return (
     <>
       <Carousel className="home1" showThumbs={false} autoPlay infiniteLoop>
@@ -81,3 +81,4 @@ export default ({ imageLinks }) => {
     </>
   );
 };
+export default Home1_carousal;

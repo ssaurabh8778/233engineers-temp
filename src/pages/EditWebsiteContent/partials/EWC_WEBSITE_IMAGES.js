@@ -3,8 +3,6 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import {
   Button,
-  TextField,
-  Grid,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -40,7 +38,7 @@ if (!firebase.apps.length) {
   firebase.app();
 }
 
-export default () => {
+const EWC_WEBSITE_IMAGES = () => {
   const [home1_carousel_image_1, set_home1_carousel_image_1] = useState("");
   const [home1_carousel_image_2, set_home1_carousel_image_2] = useState("");
   const [home1_carousel_image_3, set_home1_carousel_image_3] = useState("");
@@ -143,7 +141,7 @@ export default () => {
     }
     firebase
       .database()
-      .ref("websiteContent/" + "images")
+      .ref("websiteContent/images")
       .set({
         home1_carousel_image_1,
         home1_carousel_image_2,
@@ -163,7 +161,7 @@ export default () => {
   useEffect(() => {
     firebase
       .database()
-      .ref("websiteContent/" + "images")
+      .ref("websiteContent/images")
       .get()
       .then((snapshot) => {
         console.log(snapshot.val());
@@ -255,6 +253,7 @@ const UpdateImage = ({ item, uploadImage }) => {
       <h4 style={{ width: "30%" }}>{item.label}</h4>
       <img
         src={item.value}
+        alt=""
         style={{
           width: "150px",
           height: "150px",
@@ -272,3 +271,4 @@ const UpdateImage = ({ item, uploadImage }) => {
     </div>
   );
 };
+export default EWC_WEBSITE_IMAGES;

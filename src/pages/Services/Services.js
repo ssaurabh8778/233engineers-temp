@@ -3,9 +3,8 @@ import ServicesCard from "./partials/ServicesCard";
 import "./Services.css";
 import firebase from "../../firebase";
 
-import { Link } from "react-router-dom";
 
-export default () => {
+const Services = () => {
   const [imageLinks, setImageLinks] = useState({});
   useEffect(() => {
     firebase
@@ -74,3 +73,4 @@ export default () => {
     </>
   );
 };
+export default Services;

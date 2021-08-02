@@ -7,11 +7,11 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from "@material-ui/core";
-import UD1_UserProfile from "./partials/UD1_UserProfile";
-import UD2_projectEarnings from "./partials/UD2_projectEarnings";
-import UD3_projectInvites from "./partials/UD3_projectInvites";
-import UD4_projectsFeed from "./partials/UD4_projectsFeed";
-import UD5_newsFeed from "./partials/UD5_newsFeed";
+import UD1UserProfile from "./partials/UD1_UserProfile";
+import UD2projectEarnings from "./partials/UD2_projectEarnings";
+import UD3projectInvites from "./partials/UD3_projectInvites";
+import UD4projectsFeed from "./partials/UD4_projectsFeed";
+import UD5newsFeed from "./partials/UD5_newsFeed";
 import UD6_CHAT_POPUP from "./partials/UD6_CHAT_POPUP";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
@@ -29,7 +29,7 @@ export default function FullWidthGrid() {
         <Grid style={{ maxWidth: "1280px" }} container spacing={3}>
           <Grid item xs={12}>
             <Paper>
-              <UD1_UserProfile />
+              <UD1UserProfile />
             </Paper>
           </Grid>
           <Grid item containe xs={12}>
@@ -63,7 +63,7 @@ export default function FullWidthGrid() {
                       minWidth: "350px",
                     }}
                   >
-                    <UD2_projectEarnings />
+                    <UD2projectEarnings />
                   </Paper>
 
                   <Paper
@@ -79,18 +79,18 @@ export default function FullWidthGrid() {
                       minWidth: "350px",
                     }}
                   >
-                    <UD3_projectInvites />
+                    <UD3projectInvites />
                   </Paper>
                 </div>
               </AccordionDetails>
             </Accordion>
           </Grid>
           <Grid item xs={12}>
-            <UD4_projectsFeed />
+            <UD4projectsFeed />
           </Grid>
           <Grid item xs={12}>
             <Paper>
-              <UD5_newsFeed />
+              <UD5newsFeed />
             </Paper>
           </Grid>
         </Grid>

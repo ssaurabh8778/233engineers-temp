@@ -4,35 +4,40 @@ import { Paper, Card, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 //GetInTouch section of AboutUs page
-export default ({ data, imageLinks }) => {
+const About2_GetInTouch = ({ data, imageLinks }) => {
   const [about2_getInTouch_card1, set_about2_getInTouch_card1] = useState("");
   const [about2_getInTouch_card2, set_about2_getInTouch_card2] = useState("");
   const [about2_getInTouch_card3, set_about2_getInTouch_card3] = useState("");
 
-  const aboutUs = [
-    {
-      label: "about2_getInTouch_card1",
-      value: about2_getInTouch_card1,
-      method: set_about2_getInTouch_card1,
-    },
-    {
-      label: "about2_getInTouch_card2",
-      value: about2_getInTouch_card2,
-      method: set_about2_getInTouch_card2,
-    },
-    {
-      label: "about2_getInTouch_card3",
-      value: about2_getInTouch_card3,
-      method: set_about2_getInTouch_card3,
-    },
-  ];
   useEffect(() => {
+    const aboutUs = [
+      {
+        label: "about2_getInTouch_card1",
+        value: about2_getInTouch_card1,
+        method: set_about2_getInTouch_card1,
+      },
+      {
+        label: "about2_getInTouch_card2",
+        value: about2_getInTouch_card2,
+        method: set_about2_getInTouch_card2,
+      },
+      {
+        label: "about2_getInTouch_card3",
+        value: about2_getInTouch_card3,
+        method: set_about2_getInTouch_card3,
+      },
+    ];
     if (data) {
       aboutUs.map((item) => item.method(data[item.label]));
     }
-  }, [data]);
+  }, [
+    data,
+    about2_getInTouch_card1,
+    about2_getInTouch_card2,
+    about2_getInTouch_card3,
+  ]);
   return (
-    <Paper elevation="3">
+    <Paper elevation={3}>
       <h1
         style={{
           margin: "10px",
@@ -43,8 +48,8 @@ export default ({ data, imageLinks }) => {
       >
         Get In Touch
       </h1>
-      <div elevation="3" className="about2--container">
-        <Card elevation="5" className="about2--card">
+      <div elevation={3} className="about2--container">
+        <Card elevation={5} className="about2--card">
           <img src={imageLinks.aboutUs_getInTouch_image_1} alt="" />
           <div className="about2--textContainer">
             <h3>Consulting & Advisory</h3>
@@ -60,7 +65,7 @@ export default ({ data, imageLinks }) => {
             </Button>
           </div>
         </Card>
-        <Card elevation="5" className="about2--card">
+        <Card elevation={5} className="about2--card">
           <img src={imageLinks.aboutUs_getInTouch_image_2} alt="" />
           <div className="about2--textContainer">
             <h3>Engineering Project</h3>
@@ -76,7 +81,7 @@ export default ({ data, imageLinks }) => {
             </Button>
           </div>
         </Card>
-        <Card elevation="5" className="about2--card">
+        <Card elevation={5} className="about2--card">
           <img src={imageLinks.aboutUs_getInTouch_image_3} alt="" />
           <div className="about2--textContainer">
             <h3>Mentoring</h3>
@@ -99,3 +104,4 @@ export default ({ data, imageLinks }) => {
     </Paper>
   );
 };
+export default About2_GetInTouch;

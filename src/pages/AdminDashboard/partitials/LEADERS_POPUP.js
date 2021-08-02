@@ -12,7 +12,6 @@ import {
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import firebase from "../../../firebase";
-import dateFormat from "dateformat";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -26,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default ({
+const LEADERS_POPUP = ({
   open,
   newObject,
   objectDetails,
@@ -200,6 +199,7 @@ export default ({
         <h3>Upload Image</h3>
         <img
           src={imgUrl}
+          alt=""
           style={{
             width: "150px",
             height: "150px",
@@ -218,3 +218,4 @@ export default ({
     </>
   );
 };
+export default LEADERS_POPUP;

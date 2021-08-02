@@ -6,9 +6,9 @@ import firebase from "../../../firebase";
 import "./Home4.css";
 import { Link } from "react-router-dom";
 
-export default () => {
+const Home4 =() => {
   return (
-    <Paper elevation="3" className="home4--container">
+    <Paper elevation={3} className="home4--container">
       <div className="home4--conatiner--header">
         <h1>News & Highlights</h1>
         <Link to="/news">
@@ -21,15 +21,15 @@ export default () => {
 };
 
 // list of items
-const list = [
-  { src: "images/img-3.jpg", path: "/services", text: "1" },
-  { src: "images/img-4.jpg", path: "/services", text: "2" },
-  { src: "images/img-5.jpg", path: "/services", text: "3" },
-  { src: "images/img-6.jpg", path: "/services", text: "4" },
-  { src: "images/img-7.jpg", path: "/services", text: "5" },
-  { src: "images/img-8.jpg", path: "/services", text: "6" },
-  { src: "images/img-9.jpg", path: "/services", text: "7" },
-];
+// const list = [
+//   { src: "images/img-3.jpg", path: "/services", text: "1" },
+//   { src: "images/img-4.jpg", path: "/services", text: "2" },
+//   { src: "images/img-5.jpg", path: "/services", text: "3" },
+//   { src: "images/img-6.jpg", path: "/services", text: "4" },
+//   { src: "images/img-7.jpg", path: "/services", text: "5" },
+//   { src: "images/img-8.jpg", path: "/services", text: "6" },
+//   { src: "images/img-9.jpg", path: "/services", text: "7" },
+// ];
 
 export const Menu = (list) =>
   list.map((listItem) => {
@@ -42,7 +42,7 @@ export const Menu = (list) =>
         >
           <img
             src={listItem.imgUrl}
-            alt="Travel Image"
+            alt="Travel"
             className="home4__cards__item__img"
           />
           <Typography
@@ -135,3 +135,4 @@ export const HorizontalNewsScroll = () => {
     />
   );
 };
+export default Home4;

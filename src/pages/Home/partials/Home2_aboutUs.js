@@ -1,19 +1,18 @@
 import React from "react";
 import "./Home2_aboutUs.css";
-import { Card, Paper, Grid } from "@material-ui/core";
+import { Paper, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-export default ({ imageLinks }) => {
+const Home2_aboutUs = ({ imageLinks }) => {
   return (
     <Grid item xs={12} container>
       <Grid
-        item
         item
         xs={12}
         sm={6}
         style={{ display: "flex", alignItmes: "center", width: "100%" }}
       >
-        <Paper elevation="15" className="home2--insideContainer1">
+        <Paper elevation={15} className="home2--insideContainer1">
           <h1>Engineers & Scientists Interested in Solving Ghana Challenges</h1>
           <p>
             An estimated 2.5 million new engineers and technicians are required
@@ -21,17 +20,16 @@ export default ({ imageLinks }) => {
             improved access to clean water and sanitation
           </p>
           <p style={{ textAlign: "center" }}>-UNESCO</p>
-          <img src={imageLinks.home1_readMoreAboutUs_image} />
+          <img src={imageLinks.home1_readMoreAboutUs_image} alt="" />
         </Paper>
       </Grid>
       <Grid
-        item
         item
         xs={12}
         sm={6}
         style={{ display: "flex", alignItmes: "center", width: "100%" }}
       >
-        <Paper elevation="15" className="home2--insideContainer2">
+        <Paper elevation={15} className="home2--insideContainer2">
           <div style={{ width: "60%", marginBottom: "30px" }}>
             <h1 className="home2--insideContainer2--text1">
               "Ti koro nko agyina"
@@ -55,3 +53,4 @@ export default ({ imageLinks }) => {
     </Grid>
   );
 };
+export default Home2_aboutUs;

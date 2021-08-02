@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Card, Paper, Grid } from "@material-ui/core";
 import firebase from "../../../firebase";
 import "./Home3_whyChooseUs.css";
-import { Link } from "@material-ui/icons";
 import { withRouter } from "react-router-dom";
 
 const Home3 = ({ imageLinks, history }) => {
@@ -42,7 +41,7 @@ const Home3 = ({ imageLinks, history }) => {
   useEffect(() => {
     firebase
       .database()
-      .ref("websiteContent/" + "home")
+      .ref("websiteContent/home")
       .get()
       .then((snapshot) => {
         home.map((item) =>
@@ -53,7 +52,7 @@ const Home3 = ({ imageLinks, history }) => {
   return (
     <Grid item xs={12} container>
       <Paper
-        elevation="3"
+        elevation={3}
         style={{
           width: "100%",
           display: "flex",
@@ -62,7 +61,6 @@ const Home3 = ({ imageLinks, history }) => {
         }}
       >
         <Grid
-          item
           item
           xs={12}
           style={{ display: "flex", alignItmes: "center", width: "100%" }}
@@ -73,17 +71,17 @@ const Home3 = ({ imageLinks, history }) => {
           </div>
         </Grid>
         <div className="home3--insideContainer2">
-          <Card elevation="5" className="home3--insideContainer2--card">
+          <Card elevation={5} className="home3--insideContainer2--card">
             <img src="233_images/1.svg" alt="" />
             <h1>Diverse Expertise</h1>
             <p>{home2_whyChooseUs_card1}</p>
           </Card>
-          <Card elevation="5" className="home3--insideContainer2--card">
+          <Card elevation={5} className="home3--insideContainer2--card">
             <img src="233_images/2.svg" alt="" />
             <h1>Purpose Over Profit</h1>
             <p>{home2_whyChooseUs_card2}</p>
           </Card>
-          <Card elevation="5" className="home3--insideContainer2--card">
+          <Card elevation={5} className="home3--insideContainer2--card">
             <img src="233_images/3.svg" alt="" />
             <h1>The Joy of Philanthropy</h1>
             <p>{home2_whyChooseUs_card3}</p>

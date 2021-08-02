@@ -9,7 +9,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
-export default () => {
+const LogIn =() => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [email1, setEmail1] = useState();
@@ -44,7 +44,7 @@ export default () => {
       .signInWithEmailAndPassword(email, password)
       .catch((error) => alert(error.message))
       .then((userCredential) => {
-        var user = userCredential.user;
+        // var user = userCredential.user;
         window.location = "/user-dashboard";
       })
       .catch((error) => {
@@ -88,12 +88,12 @@ export default () => {
   return (
     <>
       <Grid className="login--container">
-        <Paper elevation="5" className="login--insideContainer2">
+        <Paper elevation={5} className="login--insideContainer2">
           <Paper
             className="login--insideContainer1
         "
           >
-            <img className="login--logo" src="/233_images/logo.png" />
+            <img className="login--logo" src="/233_images/logo.png" alt="" />
             <h2 style={{ color: "#204d65", marginBottom: "25px" }}>
               233engineers
             </h2>
@@ -194,7 +194,7 @@ export default () => {
             variant={"contained"}
             color={"secondary"}
             onClick={handleClose}
-            color="primary"
+            // color="primary"
           >
             Cancel
           </Button>
@@ -202,7 +202,6 @@ export default () => {
             variant={"contained"}
             color={"primary"}
             onClick={handleClose}
-            color="primary"
           >
             Reset Password
           </Button>
@@ -211,3 +210,4 @@ export default () => {
     </>
   );
 };
+export default LogIn;

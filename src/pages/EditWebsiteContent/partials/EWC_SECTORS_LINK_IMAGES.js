@@ -3,8 +3,6 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import {
   Button,
-  TextField,
-  Grid,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -40,7 +38,7 @@ if (!firebase.apps.length) {
   firebase.app();
 }
 
-export default () => {
+const EWC_SECTORS_LINK_IMAGES = () => {
   const [energy_and_resources, set_energy_and_resources] = useState("");
   const [biomedical_engineering, set_biomedical_engineering] = useState("");
   const [project_management, set_project_management] = useState("");
@@ -234,6 +232,7 @@ const UpdateImage = ({ item, uploadImage }) => {
       <h4 style={{ width: "30%" }}>{item.label}</h4>
       <img
         src={item.value}
+        alt=""
         style={{
           width: "150px",
           height: "150px",
@@ -251,3 +250,4 @@ const UpdateImage = ({ item, uploadImage }) => {
     </div>
   );
 };
+export default EWC_SECTORS_LINK_IMAGES;

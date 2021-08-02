@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { ChatList, MessageList, Button } from "react-chat-elements";
-import { Input, TextField } from "@material-ui/core";
+import { ChatList, MessageList } from "react-chat-elements";
+import { Input } from "@material-ui/core";
 import "react-chat-elements/dist/main.css";
 import "./Messenger.css";
-import { Popup } from "react-chat-elements";
 //import { chatListData, messages } from "./messageData";
 import firebase from "../../firebase";
 import SendIcon from "@material-ui/icons/Send";

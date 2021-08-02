@@ -3,12 +3,12 @@ import "./UD6_CHAT_POPUP.css";
 import ChatIcon from "@material-ui/icons/Chat";
 import CloseIcon from "@material-ui/icons/Close";
 import { Paper, Typography } from "@material-ui/core";
-import { ChatList, MessageList, Button } from "react-chat-elements";
+import {  MessageList } from "react-chat-elements";
 import "react-chat-elements/dist/main.css";
 import firebase from "../../../firebase";
 import { useAuth } from "../../../AuthContext";
 import SendIcon from "@material-ui/icons/Send";
-import { Input, TextField } from "@material-ui/core";
+import { Input } from "@material-ui/core";
 
 function UD6_CHAT_POPUP() {
   const [showPopUp, setShowPopUp] = useState(false);
@@ -29,7 +29,6 @@ export default UD6_CHAT_POPUP;
 const ChatBox = ({ togglePopUp }) => {
   const { currentUser } = useAuth();
   const [messageText, setMessageText] = useState("");
-  const [chatListData, setChatListData] = useState([]);
   const [messages, setMessages] = useState([
     {
       position: "right",

@@ -3,10 +3,7 @@ import "fontsource-roboto";
 import {
   Button,
   Card,
-  Avatar,
   Typography,
-  AppBar,
-  Toolbar,
 } from "@material-ui/core";
 import firebase from "../../firebase";
 import { Link } from "react-router-dom";

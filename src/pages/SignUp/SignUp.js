@@ -4,7 +4,7 @@ import { Paper, Typography, TextField, Button } from "@material-ui/core";
 import firebase from "../../firebase";
 import Typewriter from "typewriter-effect";
 
-export default () => {
+const SignUp = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -18,7 +18,7 @@ export default () => {
   useEffect(() => {
     firebase
       .database()
-      .ref("websiteContent/" + "images")
+      .ref("websiteContent/images")
       .get()
       .then((snapshot) => {
         console.log("this", snapshot.val());
@@ -139,7 +139,7 @@ export default () => {
         >
           <div className="signup--insideContainer">
             <div
-              elevation="3"
+              elevation={3}
               className="signup--insideContainer1
         "
             >
@@ -173,7 +173,7 @@ export default () => {
               <div></div>
             </div>
             <Paper
-              elevation="10"
+              elevation={10}
               style={{ position: "sticky", backgroundColor: "#f8f8f8" }}
               className="signup--insideContainer2"
             >
@@ -280,3 +280,4 @@ export default () => {
     </>
   );
 };
+export default SignUp;

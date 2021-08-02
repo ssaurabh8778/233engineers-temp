@@ -6,15 +6,13 @@ import {
   Card,
   Avatar,
   Typography,
-  AppBar,
   Toolbar,
 } from "@material-ui/core";
 import { useLocation } from "react-router-dom";
 import firebase from "../../firebase";
-import { ContactlessOutlined } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
-export default (props) => {
+const ServicePage =(props) => {
   const [showOverview, setShowOverview] = useState(true);
   const [showKeyProjects, setShowKeyProjects] = useState(false);
   const [showKeyPeople, setShowKeyPeople] = useState(false);
@@ -264,10 +262,4 @@ const KeyProjects = ({ keyProjectsList }) => {
   );
 };
 
-{
-  /*<OverView />
-      <KeyPeople />
-      <Projects />*/
-}
-
-const projectsData = [{}, {}, {}, {}, {}, {}, {}];
+export default ServicePage;

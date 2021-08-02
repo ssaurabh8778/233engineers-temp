@@ -6,7 +6,7 @@ import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import firebase from "../../../firebase";
 
-export default () => {
+const UD5_newsFeed = () => {
   return (
     <Paper className="ud5--container">
       <h3>News & Highlights</h3>
@@ -22,13 +22,13 @@ const Menu = (list) =>
     return (
       <Link to={`/news/${listItem.newsId}`} style={{ textDecoration: "none" }}>
         <Card
-          elevation="3"
+          elevation={3}
           className="ud5__cards__item__link"
           to={listItem.path}
         >
           <img
             src={listItem.imgUrl}
-            alt="Travel Image"
+            alt="Travel"
             className="ud5__cards__item__img"
           />
           <Typography
@@ -106,3 +106,4 @@ const HorizontalNewsScroll = () => {
     </div>
   );
 };
+export default UD5_newsFeed;

@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import "./SupportPhilantropy.css";
-import { Paper, Typography, TextField, Button } from "@material-ui/core";
+import { Paper, TextField, Button } from "@material-ui/core";
 import firebase from "../../firebase";
-import Typewriter from "typewriter-effect";
 
-export default () => {
+const SupportPhilantropy = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [country, setCountry] = useState("");
-  const [profession, setProfession] = useState("");
   const [otherDetails, setOtherDetails] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const country=""
+  const profession=""
+  const password=""
+  const confirmPassword=""
+ 
 
   const signUpWithEmailPassword = (e) => {
     e.preventDefault();
@@ -66,39 +66,39 @@ export default () => {
         alert("error", JSON.stringify(error));
       });
   };
-  const continueWithGoogle = (e) => {
-    e.preventDefault();
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then((result) => {
-        let user = result.user;
-        firebase
-          .database()
-          .ref("users/" + user.uid)
-          .get()
-          .then((snapshot) => {
-            console.log(snapshot);
-            if (!snapshot.val()) {
-              firebase
-                .database()
-                .ref("users/" + user.uid)
-                .set({
-                  fullName: user.displayName,
-                  email: user.email,
-                  otherDetails: "other details",
-                });
-              window.location = "/user-dashboard";
-            } else {
-              window.location = "/user-dashboard";
-            }
-          });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // const continueWithGoogle = (e) => {
+  //   e.preventDefault();
+  //   var provider = new firebase.auth.GoogleAuthProvider();
+  //   firebase
+  //     .auth()
+  //     .signInWithPopup(provider)
+  //     .then((result) => {
+  //       let user = result.user;
+  //       firebase
+  //         .database()
+  //         .ref("users/" + user.uid)
+  //         .get()
+  //         .then((snapshot) => {
+  //           console.log(snapshot);
+  //           if (!snapshot.val()) {
+  //             firebase
+  //               .database()
+  //               .ref("users/" + user.uid)
+  //               .set({
+  //                 fullName: user.displayName,
+  //                 email: user.email,
+  //                 otherDetails: "other details",
+  //               });
+  //             window.location = "/user-dashboard";
+  //           } else {
+  //             window.location = "/user-dashboard";
+  //           }
+  //         });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
   const Background = "/233_images/signup3.jpg";
   return (
     <>
@@ -117,7 +117,7 @@ export default () => {
         >
           <div className="sp--insideContainer">
             <div
-              elevation="3"
+              elevation={3}
               className="sp--insideContainer1
         "
             >
@@ -139,7 +139,7 @@ export default () => {
               <div></div>
             </div>
             <Paper
-              elevation="10"
+              elevation={10}
               style={{ position: "sticky", backgroundColor: "#f8f8f8" }}
               className="sp--insideContainer2"
             >
@@ -193,3 +193,4 @@ export default () => {
     </>
   );
 };
+export default SupportPhilantropy;

@@ -24,7 +24,6 @@ import dateFormat from "dateformat";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useAuth } from "../../../AuthContext";
 import { sectorList } from "../../../sectorList";
-import { TrainRounded } from "@material-ui/icons";
 import PROJECT_DETAILS from "./PROJECT_DETAILS";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -40,16 +39,16 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 //ProjectDetails section of admin dashboard
-export default () => {
+const AD2_Projects = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [projectOpen, setProjectOpen] = React.useState(false);
   const [reload, setReload] = useState(false);
-  const [createdBy, setCreatedBy] = useState("admin");
+  const createdBy="admin";
   const [creatorId, setCreatorId] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
+  const imgUrl = "";
   const [sector, setSector] = useState("Select Sector");
   const [availableFunds, setAvailableFunds] = useState("");
   const [phone, setPhone] = useState("");
@@ -296,3 +295,4 @@ export default () => {
     </>
   );
 };
+export default AD2_Projects;

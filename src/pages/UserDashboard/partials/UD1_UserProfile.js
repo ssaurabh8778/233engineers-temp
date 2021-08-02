@@ -21,7 +21,7 @@ import SnackBar from "../../../components/SnackBar";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { sectorList } from "../../../sectorList";
 
-export default (props) => {
+const UD1_UserProfile = (props) => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -182,25 +182,25 @@ export default (props) => {
     }
   };
 
-  const downloadResume = (e) => {
-    e.preventDefault();
-    alert(123);
-    if (resumeLink === "") {
-      alert("No resume uploaded");
-      return;
-    }
-    var xhr = new XMLHttpRequest();
-    console.log(resumeLink);
-    xhr.responseType = "blob";
-    xhr.onload = (event) => {
-      alert("loaded");
-      var blob = xhr.response;
-    };
-    xhr.onerror(() => alert("error"));
-    xhr.open("GET", resumeLink);
-    console.log(xhr);
-    xhr.send();
-  };
+  // const downloadResume = (e) => {
+  //   e.preventDefault();
+  //   alert(123);
+  //   if (resumeLink === "") {
+  //     alert("No resume uploaded");
+  //     return;
+  //   }
+  //   var xhr = new XMLHttpRequest();
+  //   console.log(resumeLink);
+  //   xhr.responseType = "blob";
+  //   xhr.onload = (event) => {
+  //     alert("loaded");
+  //     var blob = xhr.response;
+  //   };
+  //   xhr.onerror(() => alert("error"));
+  //   xhr.open("GET", resumeLink);
+  //   console.log(xhr);
+  //   xhr.send();
+  // };
 
   return (
     <Accordion>
@@ -416,7 +416,7 @@ export default (props) => {
                 type="file"
                 onChange={(e) => setFile(e.target.files[0])}
               />
-              <a href={resumeLink} target="_blank">
+              <a href={resumeLink} target="_blank" rel="noreferrer" >
                 View Uploaded Resume
               </a>
             </div>
@@ -449,3 +449,4 @@ export default (props) => {
     </Accordion>
   );
 };
+export default UD1_UserProfile;

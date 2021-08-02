@@ -5,13 +5,12 @@ import { useTransition, animated } from "react-spring";
 import { useAuth } from "../../../AuthContext";
 import firebase from "../../../firebase";
 
-export default () => {
+const UD3_projectInvites = () => {
   const [switch1, setSwitch1] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
   const [rowData, setRowData] = useState([]);
   const [invite, setInvite] = useState();
   const [requestCounts, setRequestCounts] = useState(0);
-  const [text, setText] = useState("This is the project description");
   const { currentUser } = useAuth();
   const transition = useTransition(isVisible, {
     from: { x: -100, y: 0, opacity: 0 },
@@ -189,3 +188,4 @@ export default () => {
     </>
   );
 };
+export default UD3_projectInvites;

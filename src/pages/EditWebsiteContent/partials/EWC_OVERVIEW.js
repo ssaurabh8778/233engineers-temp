@@ -21,7 +21,6 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 import firebase from "../../../firebase";
-import dateFormat from "dateformat";
 import { sectorList } from "../../../sectorList";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -36,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default () => {
+const EWC_OVERVIEW = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [reload, setReload] = useState(false);
@@ -291,6 +290,7 @@ export default () => {
             <div>
               <h3>Upload OverView Image</h3>
               <img
+              alt=""
                 src={imgUrl}
                 style={{
                   width: "150px",
@@ -309,6 +309,7 @@ export default () => {
               <h3>Upload Top Image</h3>
               <img
                 src={topImgUrl}
+                alt=""
                 style={{
                   width: "150px",
                   height: "150px",
@@ -330,3 +331,4 @@ export default () => {
     </>
   );
 };
+export default EWC_OVERVIEW;

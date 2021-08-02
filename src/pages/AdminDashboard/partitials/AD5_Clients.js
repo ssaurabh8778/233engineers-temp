@@ -1,29 +1,21 @@
 import React, { useState, useEffect } from "react";
 import {
   Button,
-  TextField,
-  Dialog,
-  AppBar,
-  Toolbar,
   Accordion,
   AccordionSummary,
   AccordionDetails,
   Typography,
 } from "@material-ui/core/";
-import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import IconButton from "@material-ui/core/IconButton";
-import CloseIcon from "@material-ui/icons/Close";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 import firebase from "../../../firebase";
-import dateFormat from "dateformat";
 import CLIENTS_POPUP from "./CLIENTS_POPUP";
 
 //News & Heighlights section of admin dashboard
-export default () => {
+const AD5_Clients = () => {
   const [open, setOpen] = React.useState(false);
   const [reload, setReload] = useState(false);
   const [rowData, setRowData] = useState("");
@@ -142,3 +134,4 @@ export default () => {
     </>
   );
 };
+export default AD5_Clients;

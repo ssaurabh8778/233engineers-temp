@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import {
-  Button,
-  TextField,
   Dialog,
   AppBar,
   Toolbar,
@@ -10,8 +8,6 @@ import {
   AccordionSummary,
   AccordionDetails,
   Typography,
-  Select,
-  MenuItem,
 } from "@material-ui/core/";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { AgGridReact } from "ag-grid-react";
@@ -34,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 //UserDetails section of Admin Dashboard
-export default ({ rowData, reload, setReload }) => {
+const AD1_DetailsOfUsers= ({ rowData, reload, setReload }) => {
   const [profileOpen, setProfileOpen] = useState(false);
   const [profileDetails, setProfileDetails] = useState(false);
   const classes = useStyles();
@@ -107,3 +103,4 @@ export default ({ rowData, reload, setReload }) => {
     </>
   );
 };
+export default AD1_DetailsOfUsers;

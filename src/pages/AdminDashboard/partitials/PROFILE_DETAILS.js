@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import {
   Paper,
   TextField,
@@ -11,13 +11,11 @@ import {
   Avatar,
 } from "@material-ui/core";
 import firebase from "../../../firebase";
-import { useAuth } from "../../../AuthContext";
-import SnackBar from "../../../components/SnackBar";
 import { sectorList } from "../../../sectorList";
 
-export default ({ profileDetails, reload, setReload }) => {
+const PROFILE_DETAILS = ({ profileDetails, reload, setReload }) => {
   console.log(profileDetails);
-  const [uid, setUid] = useState(profileDetails.uid);
+  const uid=profileDetails.uid;
   const [fullName, setFullName] = useState(profileDetails.fullName);
   const [email, setEmail] = useState(profileDetails.email);
   const [phone, setPhone] = useState(profileDetails.phone);
@@ -32,12 +30,9 @@ export default ({ profileDetails, reload, setReload }) => {
   const [linkedInProfile, setLinkedInProfile] = useState(
     profileDetails.linkedInProfile
   );
-  const [resumeLink, setResumeLink] = useState(profileDetails.resumeLink);
-  const [profilePicLink, setProfilePicLink] = useState(
-    profileDetails.profilePicLink
-  );
-  const [file, setFile] = useState();
-  const { currentUser } = useAuth();
+  const resumeLink=profileDetails.resumeLink;
+  const profilePicLink=
+    profileDetails.profilePicLink;
 
   const updateEarnings = () => {
     if (uid) {
@@ -70,25 +65,25 @@ export default ({ profileDetails, reload, setReload }) => {
     }
   };
 
-  const downloadResume = (e) => {
-    e.preventDefault();
-    alert(123);
-    if (resumeLink === "") {
-      alert("No resume uploaded");
-      return;
-    }
-    var xhr = new XMLHttpRequest();
-    console.log(resumeLink);
-    xhr.responseType = "blob";
-    xhr.onload = (event) => {
-      alert("loaded");
-      var blob = xhr.response;
-    };
-    xhr.onerror(() => alert("error"));
-    xhr.open("GET", resumeLink);
-    console.log(xhr);
-    xhr.send();
-  };
+  // const downloadResume = (e) => {
+  //   e.preventDefault();
+  //   alert(123);
+  //   if (resumeLink === "") {
+  //     alert("No resume uploaded");
+  //     return;
+  //   }
+  //   var xhr = new XMLHttpRequest();
+  //   console.log(resumeLink);
+  //   xhr.responseType = "blob";
+  //   xhr.onload = (event) => {
+  //     alert("loaded");
+  //     var blob = xhr.response;
+  //   };
+  //   xhr.onerror(() => alert("error"));
+  //   xhr.open("GET", resumeLink);
+  //   console.log(xhr);
+  //   xhr.send();
+  // };
 
   return (
     <Paper className="ud1--paper">
@@ -326,7 +321,7 @@ export default ({ profileDetails, reload, setReload }) => {
           >
             Resume
           </h3>
-          <a href={resumeLink} target="_blank">
+          <a href={resumeLink} target="_blank" rel="noreferrer">
             View Uploaded Resume
           </a>
         </div>
@@ -334,3 +329,4 @@ export default ({ profileDetails, reload, setReload }) => {
     </Paper>
   );
 };
+export default PROFILE_DETAILS;

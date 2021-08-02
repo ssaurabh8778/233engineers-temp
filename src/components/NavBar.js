@@ -2,21 +2,18 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Typography, Dialog } from "@material-ui/core";
 import "./NavBar.css";
-import Dropdown from "./Dropdown";
 import {
-  AboutMenuItems,
-  SectorsMenuItems,
-  CareersMenuItems,
 } from "./MenuItems";
-import { Avatar, Card } from "@material-ui/core";
+import { Avatar } from "@material-ui/core";
 import firebase from "../firebase";
 import { useAuth } from "../AuthContext";
 
 export default function NavBar() {
   const [click, setClick] = useState(false);
-  const [aboutDropdown, setAboutDropdown] = useState(false);
+  // const [aboutDropdown, setAboutDropdown] = useState(false);
   const [sectorsDropdown, setSectorsDropdown] = useState(false);
-  const [careersDropdown, setCareersDropdown] = useState(false);
+  console.log(sectorsDropdown)
+  // const [careersDropdown, setCareersDropdown] = useState(false);
   const [userCard, setUserCard] = useState(false);
   const [userDetails, setUserDetails] = useState({});
   const { currentUser } = useAuth();

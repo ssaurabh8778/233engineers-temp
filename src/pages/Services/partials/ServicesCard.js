@@ -2,9 +2,8 @@ import React from "react";
 import "./ServicesCard.css";
 import { Paper } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import zIndex from "@material-ui/core/styles/zIndex";
 
-export default (props) => {
+const ServicesCard = (props) => {
   return (
     <Link
       to={`servicepage/${props.sectorName}`}
@@ -29,3 +28,4 @@ export default (props) => {
     </Link>
   );
 };
+export default ServicesCard;

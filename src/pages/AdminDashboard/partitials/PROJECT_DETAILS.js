@@ -4,14 +4,7 @@ import {
   Typography,
   Paper,
   Button,
-  TextField,
-  Dialog,
-  AppBar,
-  Toolbar,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Select,
+  Select, 
   MenuItem,
   Divider,
 } from "@material-ui/core";
@@ -21,8 +14,7 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 
-export default ({ projectDetails }) => {
-  const [selectedUser, setSelectedUser] = useState("Select User");
+const PROJECT_DETAILS = ({ projectDetails }) => {
   const [selectedUserID, setSelectedUserID] = useState("Select User");
   const [allUsers, setAllUsers] = useState([]);
   const [reload, setReload] = useState(false);
@@ -292,3 +284,4 @@ const Interested = ({ projectDetails }) => {
     </div>
   );
 };
+export default PROJECT_DETAILS;

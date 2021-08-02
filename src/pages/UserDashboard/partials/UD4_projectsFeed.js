@@ -31,7 +31,7 @@ import { useAuth } from "../../../AuthContext";
 import { sectorList } from "../../../sectorList";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 
-export default () => {
+const UD4_projectsFeed = () => {
   return (
     <div>
       <Paper className="ud4">
@@ -84,7 +84,7 @@ export const Menu = (list, currentUser) =>
         <Card
           color="primary"
           style={{ backgroundColor: "#f8f8f8" }}
-          elevation="3"
+          elevation={3}
         >
           <div style={{ display: "flex" }}>
             <Typography variant="subtitle1" component="h5">
@@ -178,7 +178,7 @@ const UserProjects = () => {
   const [creatorId, setCreatorId] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
+  const imgUrl="";
   const [sector, setSector] = useState("Select Sector");
   const [availableFunds, setAvailableFunds] = useState("");
   const [phone, setPhone] = useState("");
@@ -393,7 +393,7 @@ const UserProjects = () => {
               className="ewc1--textInput"
             />
             <Button
-              color="inherit"
+              // color="inherit"
               variant={"contained"}
               color={"primary"}
               onClick={(e) => saveDetails()}
@@ -407,3 +407,4 @@ const UserProjects = () => {
     </>
   );
 };
+export default UD4_projectsFeed;

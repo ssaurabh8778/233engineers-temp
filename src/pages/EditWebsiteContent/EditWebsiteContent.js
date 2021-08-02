@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import {
-  Button,
-  TextField,
   Grid,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
 } from "@material-ui/core/";
 import firebase from "firebase";
 import "firebase/firestore";
@@ -20,17 +12,17 @@ import EWC_KEY_PROJECTS from "./partials/EWC_KEY_PROJECTS";
 import EWC_WEBSITE_IMAGES from "./partials/EWC_WEBSITE_IMAGES";
 import EWC_SECTORS_LINK_IMAGES from "./partials/EWC_SECTORS_LINK_IMAGES";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      width: "100%",
-    },
-    heading: {
-      fontSize: theme.typography.pxToRem(15),
-      fontWeight: theme.typography.fontWeightRegular,
-    },
-  })
-);
+// const useStyles = makeStyles((theme: Theme) =>
+//   createStyles({
+//     root: {
+//       width: "100%",
+//     },
+//     heading: {
+//       fontSize: theme.typography.pxToRem(15),
+//       fontWeight: theme.typography.fontWeightRegular,
+//     },
+//   })
+// );
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
@@ -46,7 +38,7 @@ if (!firebase.apps.length) {
   firebase.app();
 }
 
-export default () => {
+const EditWebsiteContent= () => {
   const [home1_aboutUs_card1, set_home1_aboutUs_card1] = useState("");
   const [home1_aboutUs_card2, set_home1_aboutUs_card2] = useState("");
   const [home2_whyChooseUs_card1, set_home2_whyChooseUs_card1] = useState("");
@@ -144,41 +136,41 @@ export default () => {
     },
   ];
 
-  const updateHomeData = () => {
-    firebase
-      .database()
-      .ref("websiteContent/" + "home")
-      .set({
-        home1_aboutUs_card1: home1_aboutUs_card1,
-        home1_aboutUs_card2: home1_aboutUs_card2,
-        home2_whyChooseUs_card1: home2_whyChooseUs_card1,
-        home2_whyChooseUs_card2: home2_whyChooseUs_card2,
-        home2_whyChooseUs_card3: home2_whyChooseUs_card3,
-      });
-  };
+  // const updateHomeData = () => {
+  //   firebase
+  //     .database()
+  //     .ref("websiteContent/" + "home")
+  //     .set({
+  //       home1_aboutUs_card1: home1_aboutUs_card1,
+  //       home1_aboutUs_card2: home1_aboutUs_card2,
+  //       home2_whyChooseUs_card1: home2_whyChooseUs_card1,
+  //       home2_whyChooseUs_card2: home2_whyChooseUs_card2,
+  //       home2_whyChooseUs_card3: home2_whyChooseUs_card3,
+  //     });
+  // };
 
-  const updateAboutUsData = () => {
-    firebase
-      .database()
-      .ref("websiteContent/" + "aboutUs")
-      .set({
-        about1_whoWeAre_card1: about1_whoWeAre_card1,
-        about1_whoWeAre_card2: about1_whoWeAre_card2,
-        about1_whoWeAre_card3: about1_whoWeAre_card3,
-        about2_getInTouch_card1: about2_getInTouch_card1,
-        about2_getInTouch_card2: about2_getInTouch_card2,
-        about2_getInTouch_card3: about2_getInTouch_card3,
-        about3_vision_heading: about3_vision_heading,
-        about3_vision_content: about3_vision_content,
-        about3_mission_heading: about3_mission_heading,
-        about3_mission_content: about3_mission_content,
-      });
-  };
+  // const updateAboutUsData = () => {
+  //   firebase
+  //     .database()
+  //     .ref("websiteContent/" + "aboutUs")
+  //     .set({
+  //       about1_whoWeAre_card1: about1_whoWeAre_card1,
+  //       about1_whoWeAre_card2: about1_whoWeAre_card2,
+  //       about1_whoWeAre_card3: about1_whoWeAre_card3,
+  //       about2_getInTouch_card1: about2_getInTouch_card1,
+  //       about2_getInTouch_card2: about2_getInTouch_card2,
+  //       about2_getInTouch_card3: about2_getInTouch_card3,
+  //       about3_vision_heading: about3_vision_heading,
+  //       about3_vision_content: about3_vision_content,
+  //       about3_mission_heading: about3_mission_heading,
+  //       about3_mission_content: about3_mission_content,
+  //     });
+  // };
 
   useEffect(() => {
     firebase
       .database()
-      .ref("websiteContent/" + "home")
+      .ref("websiteContent/home")
       .get()
       .then((snapshot) => {
         home.map((item) =>
@@ -187,7 +179,7 @@ export default () => {
       });
     firebase
       .database()
-      .ref("websiteContent/" + "aboutUs")
+      .ref("websiteContent/aboutUs")
       .get()
       .then((snapshot) => {
         aboutUs.map((item) =>
@@ -196,7 +188,6 @@ export default () => {
       });
   }, []);
 
-  const classes = useStyles();
 
   return (
     <Grid
@@ -225,3 +216,4 @@ export default () => {
     </Grid>
   );
 };
+export default EditWebsiteContent;

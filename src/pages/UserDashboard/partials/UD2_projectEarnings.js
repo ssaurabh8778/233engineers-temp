@@ -2,7 +2,7 @@ import React from "react";
 import "./UD2_projectEarnings.css";
 import { Paper } from "@material-ui/core";
 
-export default () => {
+const UD2_projectEarnings= () => {
   return (
     <>
       <h2
@@ -27,3 +27,4 @@ export default () => {
     </>
   );
 };
+export default UD2_projectEarnings;

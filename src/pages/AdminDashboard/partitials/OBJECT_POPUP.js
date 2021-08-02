@@ -7,14 +7,9 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  Select,
-  MenuItem,
 } from "@material-ui/core/";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
-import DeleteIcon from "@material-ui/icons/Delete";
-import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 import firebase from "../../../firebase";
@@ -32,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default ({
+const OBJECT_POPUP = ({
   open,
   newObject,
   objectDetails,
@@ -183,6 +178,7 @@ export default ({
         />
         <h3>Upload Image</h3>
         <img
+          alt=""
           src={imgUrl}
           style={{
             width: "150px",
@@ -202,3 +198,4 @@ export default ({
     </>
   );
 };
+export default OBJECT_POPUP;
